@@ -11,15 +11,15 @@
 
 ```mermaid
 flowchart TD
-    A["🌬️ 외부 환경 입력\n풍속 센서 · 풍향 센서 · 난류 센서 · 기상 예보"]
-    B["🔧 데이터 전처리 모듈\n노이즈 필터링(칼만 필터) · 이상값 제거 · 정규화"]
-    C["📡 터빈 상태 모니터링\n현재 피치각 · RPM · 진동 · 베어링 온도 · 토크\n→ 피로도(Fatigue) 누적 추정"]
-    D["🤖 인공지능 AI\n입력: 풍속 · 풍향 · 난류 · RPM · 진동 · 피로도 · 피치각\n출력: 최적 목표 피치각(°)\n목적함수: min(마모 누적)"]
-    E["⚙️ 피치 제어 액추에이터\n유압/전동 모터로 블레이드 각도 조절\nPID 피드백 루프 내장"]
-    F["🌀 풍력 발전기 본체\n블레이드 → 로터 → 기어박스 → 발전기"]
-    G["⚡ 발전량 출력"]
-    H["📊 마모 상태 피드백"]
-    I["🚨 경보 / 이상 감지"]
+    A["<b>🌬️ 외부 환경 입력</b><br/>──────────────────<br/>풍속 센서 · 풍향 센서<br/>난류 센서 · 기상 예보 데이터"]
+    B["<b>🔧 데이터 전처리 모듈</b><br/>──────────────────<br/>노이즈 필터링 (칼만 필터 / 이동 평균)<br/>이상값 제거 · 시계열 정규화"]
+    C["<b>📡 터빈 상태 모니터링</b><br/>──────────────────<br/>현재 피치각 · RPM · 진동 센서<br/>베어링 온도 · 토크<br/>→ 피로도(Fatigue) 누적 추정"]
+    D["<b>🤖 인공지능 AI</b><br/>──────────────────<br/>입력: 풍속 · 풍향 · 난류 · RPM · 진동 · 피로도 · 피치각<br/>출력: 최적 목표 피치각 (°)<br/>목적함수: min(마모 누적)"]
+    E["<b>⚙️ 피치 제어 액추에이터</b><br/>──────────────────<br/>유압/전동 모터로 블레이드 각도 조절<br/>PID 피드백 루프 내장"]
+    F["<b>🌀 풍력 발전기 본체</b><br/>──────────────────<br/>블레이드 → 로터 → 기어박스 → 발전기"]
+    G["<b>⚡ 발전량 출력</b>"]
+    H["<b>📊 마모 상태 피드백</b>"]
+    I["<b>🚨 경보 / 이상 감지</b>"]
 
     A --> B
     B --> C
@@ -29,17 +29,17 @@ flowchart TD
     F --> G
     F --> H
     F --> I
-    H -->|"피드백 루프 (재학습 데이터)"| D
+    H -->|"♻️ 피드백 루프 (재학습 데이터)"| D
 
-    style A fill:#1e3a5f,color:#fff,stroke:#4a9eff
-    style B fill:#1e3a5f,color:#fff,stroke:#4a9eff
-    style C fill:#1e3a5f,color:#fff,stroke:#4a9eff
-    style D fill:#4a0080,color:#fff,stroke:#bb44ff
-    style E fill:#1e3a5f,color:#fff,stroke:#4a9eff
-    style F fill:#1e3a5f,color:#fff,stroke:#4a9eff
-    style G fill:#1a4a1a,color:#fff,stroke:#44ff88
-    style H fill:#4a3000,color:#fff,stroke:#ffaa00
-    style I fill:#4a1a1a,color:#fff,stroke:#ff4444
+    style A fill:#1e3a5f,color:#fff,stroke:#4a9eff,stroke-width:2px
+    style B fill:#1e3a5f,color:#fff,stroke:#4a9eff,stroke-width:2px
+    style C fill:#1e3a5f,color:#fff,stroke:#4a9eff,stroke-width:2px
+    style D fill:#4a0080,color:#fff,stroke:#bb44ff,stroke-width:3px
+    style E fill:#1e3a5f,color:#fff,stroke:#4a9eff,stroke-width:2px
+    style F fill:#1e3a5f,color:#fff,stroke:#4a9eff,stroke-width:2px
+    style G fill:#1a4a1a,color:#fff,stroke:#44ff88,stroke-width:2px
+    style H fill:#4a3000,color:#fff,stroke:#ffaa00,stroke-width:2px
+    style I fill:#4a1a1a,color:#fff,stroke:#ff4444,stroke-width:2px
 ```
 
 ---
